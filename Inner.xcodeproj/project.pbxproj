@@ -13,6 +13,7 @@
 		6568345D1FD907A3000E2F8D /* SignInSignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6568345C1FD907A3000E2F8D /* SignInSignOutViewController.swift */; };
 		6568345F1FD91B17000E2F8D /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6568345E1FD91B17000E2F8D /* LoginTextField.swift */; };
 		656834611FD94545000E2F8D /* ImageUploadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656834601FD94545000E2F8D /* ImageUploadButton.swift */; };
+		6588DD5C20077096003D39E4 /* HomePageButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588DD5B20077096003D39E4 /* HomePageButtons.swift */; };
 		65C2BD951FD8DF78008117F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2BD941FD8DF78008117F6 /* AppDelegate.swift */; };
 		65C2BD971FD8DF78008117F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2BD961FD8DF78008117F6 /* ViewController.swift */; };
 		65C2BD9A1FD8DF78008117F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C2BD981FD8DF78008117F6 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		6568345C1FD907A3000E2F8D /* SignInSignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSignOutViewController.swift; sourceTree = "<group>"; };
 		6568345E1FD91B17000E2F8D /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		656834601FD94545000E2F8D /* ImageUploadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadButton.swift; sourceTree = "<group>"; };
+		6588DD5B20077096003D39E4 /* HomePageButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageButtons.swift; sourceTree = "<group>"; };
 		65C2BD911FD8DF78008117F6 /* Inner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C2BD941FD8DF78008117F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65C2BD961FD8DF78008117F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				65C2BDC21FD8E00C008117F6 /* GoogleService-Info.plist */,
 				6568345C1FD907A3000E2F8D /* SignInSignOutViewController.swift */,
 				6568345E1FD91B17000E2F8D /* LoginTextField.swift */,
+				6588DD5B20077096003D39E4 /* HomePageButtons.swift */,
 				656834601FD94545000E2F8D /* ImageUploadButton.swift */,
 				65444F211FD9738B00EA112F /* ProfileViewController.swift */,
 			);
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65444F221FD9738B00EA112F /* ProfileViewController.swift in Sources */,
+				6588DD5C20077096003D39E4 /* HomePageButtons.swift in Sources */,
 				6568345D1FD907A3000E2F8D /* SignInSignOutViewController.swift in Sources */,
 				6568345F1FD91B17000E2F8D /* LoginTextField.swift in Sources */,
 				65C2BD971FD8DF78008117F6 /* ViewController.swift in Sources */,

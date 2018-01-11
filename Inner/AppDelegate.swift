@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //***// IMPORTANT!!!!!!!!!
         FIRApp.configure()
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
     
