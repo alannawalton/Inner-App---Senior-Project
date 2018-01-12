@@ -246,6 +246,7 @@ class SignInSignOutViewController: UIViewController, UIImagePickerControllerDele
         ref = FIRDatabase.database().reference()
         
         ref.child("users").child(user.uid).setValue(["phoneNumber": phoneNumber.text, "location": location.text])
+        ref.child("users").child(user.uid).child("groups").setValue(["count": 0])
         
     }
     

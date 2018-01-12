@@ -14,11 +14,9 @@ import FirebaseAuthUI
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -130,6 +128,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var displayName: UILabel!
     @IBOutlet weak var LocationField: UILabel!
+    @IBOutlet weak var groupsCountLabel: UILabel!
     
    
     
@@ -180,5 +179,5 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    
+   
 }
