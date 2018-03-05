@@ -14,6 +14,7 @@ target 'Inner' do
   pod 'FirebaseUI/Twitter'
   pod 'Firebase/Database'
   pod 'RSKImageCropper'
+  pod 'MDCSwipeToChoose'
 
   target 'InnerTests' do
     inherit! :search_paths

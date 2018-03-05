@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A0820CBC22E16D3A09E9C5A32470B4E1'
-               BlueprintName = 'SwiftyAvatar'
+               BlueprintIdentifier = '0FA2B3A7D4217A511C3DA3C92A971D33'
+               BlueprintName = 'MDCSwipeToChoose'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyAvatar.framework'>
+               BuildableName = 'MDCSwipeToChoose.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

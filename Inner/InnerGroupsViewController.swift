@@ -12,11 +12,12 @@ import Firebase
 import FirebaseAuth
 import FirebaseAuthUI
 
+
 class InnerGroupsViewController: UIViewController {
    
     @IBOutlet private weak var collectionView: UICollectionView!
     var groupCount:Int = 0
-    var collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +51,17 @@ class InnerGroupsViewController: UIViewController {
     // Get user's group count from Firebase
     func updateGroupCount(completionBlock : @escaping ((_ success : Bool?) -> Void)){
         self.ref.child("users").child((user?.uid)!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+            
             // Retrieve data
             let value = snapshot.value as? NSDictionary
-            let gCount = value?["count"] as! String
-            let gCountInt = Int(gCount)
+            let gCount = value?["count"] as? String
+            let gCountInt = Int(gCount!)
             
             // Set local variable
             self.groupCount = gCountInt!
+            
+            
+            
             
             // Reload collection view
             completionBlock(true)

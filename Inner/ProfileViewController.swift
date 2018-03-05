@@ -28,6 +28,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             getProfImage()
         }
         
+        updateGroupCount(completionBlock: {(check) in
+            print(check)
+            if check == true {
+                print(self.groupsCountLabel.text)
+            }
+        })
+      
+        
     }
     
     
@@ -130,11 +138,35 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var LocationField: UILabel!
     @IBOutlet weak var groupsCountLabel: UILabel!
     
-   
+    // database reference
+    var ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+    // Get User
+    let user = FIRAuth.auth()?.currentUser
+    
+    // Get user's group count from Firebase
+    func updateGroupCount(completionBlock : @escaping ((_ success : Bool?) -> Void)){
+        self.ref.child("users").child((user?.uid)!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            // Retrieve data
+            let value = snapshot.value as? NSDictionary
+            let firebaseLoc = value?["location"] as? String ?? ""
+            self.LocationField.text = "Location: " + firebaseLoc
+            let cc = value?["count"] as? String ?? "0"
+            let gCount = cc
+            
+            
+            // Set local variable
+            self.groupsCountLabel.text = gCount
+            
+            // Reload collection view
+            completionBlock(true)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     func getProfImage() {
-        // Get User
-        let user = FIRAuth.auth()?.currentUser
         
         if (user?.uid)!.isEmpty {
             NSLog("no user ID present")
