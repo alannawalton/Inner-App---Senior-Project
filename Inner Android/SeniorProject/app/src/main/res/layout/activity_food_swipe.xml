@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".foodSwipe">
+
+
+    <!-- activity view -->
+
+    <Button
+        android:id="@+id/Done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="gotoSelectfood"
+        android:text="View Results"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark">
+
+
+        <com.lorentzos.flingswipe.SwipeFlingAdapterView
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_dark"
+            app:rotation_degrees="15.5" />
+
+    </FrameLayout>
+
+</LinearLayout>

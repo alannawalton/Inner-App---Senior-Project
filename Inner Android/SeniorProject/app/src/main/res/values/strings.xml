@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SeniorProject</string>
+    <string name="done_label">Done</string>
+    <string name="cancel_label">Cancel</string>
+    <string name="clear_label">Clear  all</string>
+</resources>

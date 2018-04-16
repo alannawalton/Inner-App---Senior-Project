@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createGroup">
+
+    <ImageView
+        android:id="@+id/innerlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="117dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginRight="117dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/inner_logo" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginLeft="167dp"
+        android:layout_marginRight="167dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/innerlogo" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="180dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="31dp"
+        android:background="@color/colorPrimaryDark"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="180dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:ems="10"
+        android:inputType="time"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="306dp"
+        android:text="Date:"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:text="Time:"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateLabel" />
+
+    <ImageButton
+        android:id="@+id/datebtn"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="116dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:onClick="setDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:srcCompat="@android:drawable/ic_menu_today" />
+
+    <ImageButton
+        android:id="@+id/timebtn"
+        android:layout_width="37dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="128dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@+id/datebtn"
+        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+
+    <EditText
+        android:id="@+id/groupname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="134dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="134dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="29dp"
+        android:background="@color/colorPrimaryDark"
+        android:ems="10"
+        android:hint="Enter Group Name"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/GroupName"
+        app:layout_constraintTop_toBottomOf="@+id/timebtn" />
+
+    <TextView
+        android:id="@+id/GroupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="34dp"
+        android:text="Group:"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLabel" />
+
+    <Button
+        android:id="@+id/ContToselectfood"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="goTofod"
+        android:text="Contine To Food Option"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groupname" />
+</android.support.constraint.ConstraintLayout>
