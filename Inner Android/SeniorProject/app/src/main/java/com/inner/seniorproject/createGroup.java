@@ -16,6 +16,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
 
 
@@ -28,13 +31,16 @@ public class createGroup extends AppCompatActivity {
     private int year, month, day;
     private TextView timePickerValueTextView;
     private TextView grpname;
-
+    private DatabaseReference dataRoot = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference userfield;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_group);
+
+        userfield = dataRoot.child("users");
 
         dateView = (TextView) findViewById(R.id.date);
         calendar = Calendar.getInstance();
@@ -127,8 +133,10 @@ public class createGroup extends AppCompatActivity {
         });
     }
 
+
     public void goTofod(View view)
     {
+
         boolean canGoforward = true;
         if(dateView.getText().toString().equals(""))
         {
@@ -158,7 +166,10 @@ public class createGroup extends AppCompatActivity {
             canGoforward = false;
         }
         if(canGoforward) {
+            String gropname = grpname.getText().toString();
+
             Intent intent = new Intent(this, foodSwipe.class);
+            intent.putExtra("GroupName", gropname);
             startActivity(intent);
         }
     }

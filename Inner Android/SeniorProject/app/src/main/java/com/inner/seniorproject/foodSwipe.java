@@ -13,6 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
@@ -37,6 +42,10 @@ public class foodSwipe extends AppCompatActivity {
     int ticoMax = 8*3;
     int tedMax = 9*3;
     int pizMax = 8*3;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
+    String grpName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +53,13 @@ public class foodSwipe extends AppCompatActivity {
         setContentView(R.layout.activity_food_swipe);
 
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
+
+        Intent intent = getIntent();
+        grpName = (String) intent.getStringExtra("GroupName");
+
+        mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("users");
 
         restaurants = new HashMap<>();
         resMax = new HashMap<>();
@@ -253,6 +269,12 @@ public class foodSwipe extends AppCompatActivity {
     {
         Set set = restaurants.entrySet();
         Iterator i = set.iterator();
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        //Calling the MyUsers anc creatign a child by the name of this user.
+        DatabaseReference groupName = databaseReference.child(grpName);
+        DatabaseReference usrName = groupName.child(user.getDisplayName());
+
         while (i.hasNext())
         {
             Map.Entry entry = (Map.Entry)i.next();
@@ -262,10 +284,14 @@ public class foodSwipe extends AppCompatActivity {
                 score = -105.0;
             }
             entry.setValue(score);
+
+            DatabaseReference resName = usrName.child(entry.getKey().toString());
+            resName.setValue(score);
         }
         Intent intent = new Intent(this, selectRes.class);
         intent.putExtra("map", restaurants);
         intent.putExtra("data", locations);
+        intent.putExtra("GroupName", grpName);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();

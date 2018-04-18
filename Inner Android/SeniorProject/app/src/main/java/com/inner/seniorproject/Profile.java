@@ -1,17 +1,36 @@
 package com.inner.seniorproject;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Profile extends AppCompatActivity {
+
+    ImageView proPic;
+    TextView name;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        proPic = (ImageView) findViewById(R.id.propic);
+        name = (TextView) findViewById(R.id.NameProfile);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        name.setText(user.getDisplayName());
+        proPic.setImageURI(user.getPhotoUrl());
+        proPic.setScaleType(ImageView.ScaleType.FIT_XY);
+        //Log.d("Error", user.getDisplayName());
 
         final TextView editLoc = (TextView) findViewById(R.id.editLocation);
         editLoc.setOnClickListener(new View.OnClickListener() {

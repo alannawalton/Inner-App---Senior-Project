@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "547070486090",
+    "firebase_url": "https://inner-d3e3d.firebaseio.com",
+    "project_id": "inner-d3e3d",
+    "storage_bucket": "inner-d3e3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547070486090:android:e011d435f02b5af9",
+        "android_client_info": {
+          "package_name": "com.inner.seniorproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547070486090-ur5gab82gsvtuk0af65fipmfvcg9216f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHi5-d_X6kyy2z2_1Ix0N-wahGktK_V_0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
